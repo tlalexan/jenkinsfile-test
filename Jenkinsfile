@@ -14,5 +14,7 @@ def getCommitId() {
 node {
   stage('stage') {
     echo getCommitId()
+
+    echo scm.class.name
   }
 }
