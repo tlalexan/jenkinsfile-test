@@ -5,8 +5,9 @@ node {
     echo 'hello'
 
     echo currentBuild.changeSets.class.name
-    for (def changetSet : currentBuild.changeSets) {
+    for (ArrayList changetSet : currentBuild.changeSets) {
       echo changetSet.class.name
+      echo changetSet.size.toString()
       for (entry in changetSet) {
         echo entry.class.name
       }
