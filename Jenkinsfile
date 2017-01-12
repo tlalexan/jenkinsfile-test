@@ -8,7 +8,7 @@ def getCommitId() {
       }
     }
   }
-  throw "commitId unavailable"
+  throw new RuntimeException("commitId unavailable")
 }
 
 node {
