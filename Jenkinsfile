@@ -4,12 +4,14 @@ node {
   stage('stage') {
     echo 'hello'
 
-    echo currentBuild.changeSets.class.name
+    echo "ArrayList: #{currentBuild.changeSets.class.name}"
     for (ArrayList changetSet : currentBuild.changeSets) {
-      echo changetSet.class.name
-      echo changetSet.size.toString()
-      for (entry in changetSet) {
-        echo entry.class.name
+      echo "GitChangeSetList: #{changetSet.class.name}"
+      for (GitChangeSetList changeSetList in changetSet) {
+        echo "Unknown: #{changeSetList.class.name}"
+        for (item in changeSetList) {
+          echo item.class.name
+        }
       }
     }
 
