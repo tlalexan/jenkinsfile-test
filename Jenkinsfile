@@ -1,7 +1,8 @@
 #!/usr/bin/env groovy
 
-ginode {
-
+node {
   stage('stage') {
+    echo 'hello'
+    echo currentBuild.changeSets
   }
 }
