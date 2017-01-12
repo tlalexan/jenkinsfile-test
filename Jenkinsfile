@@ -4,11 +4,11 @@ node {
   stage('stage') {
     echo 'hello'
 
-    echo currentBuild.changeSets.class
+    echo currentBuild.changeSets.class.name
     for (def changetSet : currentBuild.changeSets) {
-      echo changetSet.class
+      echo changetSet.class.name
       for (entry in changetSet) {
-        echo entry.class
+        echo entry.class.name
       }
     }
 
