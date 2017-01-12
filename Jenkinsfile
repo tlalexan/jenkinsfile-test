@@ -6,8 +6,8 @@ node {
 
     echo "ArrayList: ${currentBuild.changeSets.class.name}"
     for (ArrayList set : currentBuild.changeSets) {
-      echo "GitChangeSetList: ${changetSet.class.name}"
-      for (hudson.plugins.git.GitChangeSetList changeSetList in changetSet) {
+      echo "GitChangeSetList: ${set.class.name}"
+      for (hudson.plugins.git.GitChangeSetList changeSetList in set) {
         echo "GitChangeSet: ${changeSetList.class.name}"
         for (hudson.plugins.git.GitChangeSet changeSet in changeSetList) {
           echo changeSet.commitId
