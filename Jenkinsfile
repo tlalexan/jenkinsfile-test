@@ -4,7 +4,7 @@ node {
   stage('stage') {
     echo 'hello'
 
-    currentBuild.changeSets.first.first.class.
+    currentBuild.changeSets[0][0][0].commitId
     echo "ArrayList: ${currentBuild.changeSets.class.name}"
     for (ArrayList set : currentBuild.changeSets) {
       echo "GitChangeSetList: ${set.class.name}"
