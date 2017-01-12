@@ -4,12 +4,14 @@ node {
   stage('stage') {
     echo 'hello'
 
+    currentBuild.changeSets.first.first.class.
     echo "ArrayList: ${currentBuild.changeSets.class.name}"
     for (ArrayList set : currentBuild.changeSets) {
       echo "GitChangeSetList: ${set.class.name}"
       for (hudson.plugins.git.GitChangeSetList changeSetList in set) {
-        echo "GitChangeSet: ${changeSetList.class.name}"
+        echo "changeSet: ${changeSetList.class.name}"
         for (hudson.plugins.git.GitChangeSet changeSet in changeSetList) {
+          echo "GitChangeSet: ${changeSet.class.name}"
           echo changeSet.commitId
         }
       }
