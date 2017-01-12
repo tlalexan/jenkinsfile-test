@@ -4,11 +4,11 @@ node {
   stage('stage') {
     echo 'hello'
 
-    echo "ArrayList: #{currentBuild.changeSets.class.name}"
+    echo "ArrayList: ${currentBuild.changeSets.class.name}"
     for (ArrayList changetSet : currentBuild.changeSets) {
-      echo "GitChangeSetList: #{changetSet.class.name}"
+      echo "GitChangeSetList: ${changetSet.class.name}"
       for (hudson.plugins.git.GitChangeSetList changeSetList in changetSet) {
-        echo "Unknown: #{changeSetList.class.name}"
+        echo "Unknown: ${changeSetList.class.name}"
         for (item in changeSetList) {
           echo item.class.name
         }
